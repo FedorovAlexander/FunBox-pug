@@ -1,63 +1,70 @@
-svg4everybody(); // иницализация полифила для IE
+var cards = document.querySelectorAll('.cards__item');
+var buyLink = document.querySelectorAll('.cards__text-link');
+var cardText = document.querySelectorAll('.cards__text');
+var stuff = document.querySelectorAll('.cards__text--stuffing');
+var buy = document.querySelectorAll('.cards__text-buy');
+var outOfStock = document.querySelectorAll('.cards__text--out-of-stock');
 
-var navItems = document.querySelectorAll('.main-nav__item');
-
-navItems.forEach(function(item) {
-  var itemText = item.querySelector('.main-nav__item-text');
-  var itemIcon = item.querySelector('.main-nav__item-icon');
-  item.addEventListener('mouseenter', function() {
-    itemText.style.color = '#04a7e5';
-    itemText.style.opacity = '1';
-    if (itemIcon.classList.contains('main-nav__item-icon--active')) {
+function clickActive() {
+  cards.forEach(function(card, i) {
+    var weight = card.querySelector('.food-card__weight')
+    
+    if(outOfStock[i].classList.contains('js-active')) {
       return false;
     } else {
-      itemIcon.style.color = '#04a7e5';
-      itemIcon.style.transition = 'color 0.2s linear, opacity 0.2s linear';
+      card.addEventListener('click', function() {
+        this.classList.toggle('food-card--selected')
+        this.classList.toggle('food-card--default')
+        this.classList.toggle('food-card--selected-hover')
+        this.classList.remove('food-card--hover')
+        weight.classList.toggle('food-card__weight--selected')
+        weight.classList.toggle('food-card__weight--selected-hover')
+        stuff[i].classList.toggle('js-inactive')
+        buy[i].classList.toggle('js-inactive')
+        clickCheckAndHover()
+      })
     }
-  })
-  item.addEventListener('mouseleave', function() {
-    itemText.style.opacity = '0';
-    itemText.style.color = '#8d8d8d';
-    if (itemIcon.classList.contains('main-nav__item-icon--active')) {
-      return false;
-    } else {
-      itemIcon.style.color = '#8d8d8d';
-      itemIcon.style.transition = 'color 0.2s linear, opacity 0.2s linear';
-    }
-  })
-}) 
-
-navItems.forEach(function(item) {
-  item.addEventListener('mouseenter', function() {
-    var itemIcon = item.querySelector('.main-nav__item-icon')
-    itemIcon.style.opacity = '0';
-  })
-  item.addEventListener('mouseleave', function() {
-    var itemIcon = item.querySelector('.main-nav__item-icon')
-    itemIcon.style.opacity = '1';
-  })
-}) 
-
-
-var lightboxDescription = GLightbox({
-  selector: 'glightbox',
-  descPosition: 'right'
-});
-
-function viewProject() {
-  var projectItem = document.querySelectorAll('.work-page__item')
-  projectItem.forEach(function(item) {
-    item.addEventListener('mouseenter', function() {
-      var circle = item.querySelector('.work-page__view-project')
-      circle.style.opacity = '1'
-      circle.style.textDecoration = 'none'
-    })
-    item.addEventListener('mouseleave', function() {
-      var circle = item.querySelector('.work-page__view-project')
-      circle.style.opacity = '0'
-      
-    })
   })
 }
+clickActive()
+clickCheckAndHover()
 
-viewProject();
+function clickCheckAndHover() {
+  cards.forEach(function(card) {
+    var weight = card.querySelector('.food-card__weight')
+    if (card.classList.contains('food-card--selected')) {
+        card.addEventListener('click', function() {
+          this.querySelector('.food-card__promo-food').style.display = 'block'
+          this.querySelector('.food-card__promo-cat').style.display = 'none'
+        })
+        card.addEventListener('mouseenter', function() {
+          this.classList.remove('food-card--hover')
+          this.classList.add('food-card--selected-hover')
+          weight.classList.add('food-card__weight--selected-hover')
+          this.querySelector('.food-card__promo-food').style.display = 'none'
+          this.querySelector('.food-card__promo-cat').style.display = 'block'
+        })
+      card.addEventListener('mouseleave', function() {
+        this.classList.remove('food-card--selected-hover')
+        weight.classList.remove('food-card__weight--selected-hover')
+        this.querySelector('.food-card__promo-food').style.display = 'block'
+        this.querySelector('.food-card__promo-cat').style.display = 'none'
+      })
+    } else if (card.classList.contains('food-card--default')) {
+      card.addEventListener('mouseenter', function() {
+        this.classList.add('food-card--hover')
+        this.classList.remove('food-card--selected-hover')
+        weight.classList.add('food-card__weight--default-hover')
+        weight.classList.remove('food-card__weight--selected-hover')
+        this.querySelector('.food-card__promo-food').style.display = 'block'
+        this.querySelector('.food-card__promo-cat').style.display = 'none'
+      })
+      card.addEventListener('mouseleave', function() {
+        this.classList.remove('food-card--hover')
+        weight.classList.remove('food-card__weight--default-hover')
+      })
+    } else {
+      return false
+    }
+  })
+}
