@@ -1,0 +1,37 @@
+// В этом файле должны быть стили для БЭМ-блока cat-food, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.cat-food {
+  display: flex;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  flex-direction: row;
+  z-index: 100;
+
+  &__main-title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 0 1px 0 #000000;
+    color: #ffffff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 100;
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .cat-food {
+    padding-top: 50px;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .cat-food {
+    position: absolute;
+  }
+}
