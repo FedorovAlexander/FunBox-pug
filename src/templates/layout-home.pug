@@ -8,19 +8,19 @@ html(class="no-js  page", lang="ru")
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     block meta
-      title Home
+      title Покорми кота
 
     block head
+      link(href='https://fonts.googleapis.com/css?family=Exo+2:100,400&subset=cyrillic', rel='stylesheet')
       link(rel="stylesheet", href="css/style.css")
       link(rel="shortcut icon", href="/img/favicon.ico", type="image/x-icon")
       script.
         document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
   body
-    .page__inner
-      .page__content
-      
-        block content
+    img.main-img(src='img/pattern.png' alt='pattern')
+    img.main-img(src='img/shadow.png' alt='pattern')
+    block content
 
     block page-bottom
       script(src="js/script.min.js")
