@@ -1,18 +1,18 @@
 // Подключение своих шрифтов.
 // Не пишите тут ничего, кроме @font-face
 
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url('../fonts/HelveticaNeue.woff') format('woff');
+  @font-face {
+    font-family: 'Trebuchet MS';
+    src: url('../fonts/Trebuchet-MS.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
-
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url('../fonts/HelveticaNeue-Bold.woff') format('woff');
-    font-weight: bold;
+  
+  @font-face {
+    font-family: 'Exo 2';
+    src: url('../fonts/Exo2.0-Thin.otf') format('otf');
+    font-weight: 100;
     font-style: normal;
     font-display: swap;
   }
