@@ -1,0 +1,74 @@
+// В этом файле должны быть стили для БЭМ-блока cards, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 0;
+  margin-left: 0;
+  overflow: hidden;
+
+  &__wrapper {
+    position: relative;
+    flex: 1;
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+  }
+
+  &__item--disabled {
+    background-color: #f6f6f6;
+  }
+
+  &__text {
+    margin-top: 0.75rem;
+    text-align: center;
+    text-shadow: 0 0.063rem 0 #000000;
+    letter-spacing: -0.5px;
+    color: #fff;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 0.875rem;
+  }
+
+  &__text--out-of-stock {
+    color: $color-hghlight;
+  }
+
+  &__text-link {
+    text-decoration-style: dashed;
+    color: $color-default;
+
+    &:hover {
+      color: $color-default--hover;
+    }
+
+    &:visited {
+      color: $color-default--hover;
+    }
+
+    &:active {
+      color: $color-hghlight;
+    }
+
+    &:focus {
+      color: $color-hghlight;
+    }
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .cards {
+    &__wrapper {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: $screen-md) {
+  .cards {
+    &__wrapper {
+      margin-right: 2rem;
+      margin-left: 2rem;
+    }
+  }
+}
