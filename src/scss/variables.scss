@@ -1,19 +1,18 @@
-$main-color:          #04a7e5; 
-$second-color:        #1F2455; 
-$second-color-light:  #6A4099; 
-$warning-color:       #FDC05D;
- 
-$gray-light:          #F2F2F2; 
-$gray-dark:           #231F20; 
+$screen-xs:                   480px;
+$screen-sm:                   768px;
+$screen-md:                   992px;
+$screen-lg:                   1240px;
+$screen-xl:                   1920px;
 
-$text-color:          $gray-dark;
+$text-color:                  #000;
+$description-text-color:      #666666;
 
-$font-family:         'Helvetica Neue', sans-serif;
-$font-size:           14px;
-$line-height:         1.4;
+$font-size:                   14px;
 
-$screen-xs:           480px;
-$screen-sm:           768px;
-$screen-md:           992px;
-$screen-lg:           1200px;
-$screen-xl:           1920px;
+$color-active:                #d91667;
+$color-active-hover:          #e62e7a;
+$color-default:               #1698d9;
+$color-default--hover:        #2ea8e6;
+$color-disabled:              #b3b3b3;
+$color-card-bg:               #f2f2f2;
+$color-hghlight:              #ffff66;
