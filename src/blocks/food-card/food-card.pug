@@ -1,0 +1,35 @@
+mixin food-card()
+
+  -
+    var data = {
+      'c фуа-гра': ['10', '0,5', 'мышь ', 'Печень утки разварная с артишоками.'],
+      'с рыбой': ['40', '2', '2 мыши ', 'Головы щучьи с чесноком да свежайшая сёмгушка.'],
+      'с курой': ['100', '5', '5 мышей ', 'Филе из цыплят с трюфелями в бульоне.']
+    };
+
+
+  each val, key in data
+    .cards__wrapper
+      article.cards__item.food-card.food-card--default(tabindex='0' role='article' aria-label='Блюдо для котика')
+        .food-card__content
+          .food-card__disabled-layout
+          img.food-card__img(src='img/cat.png' alt='cat')
+          p.food-card__promo.food-card__promo-food Сказочное заморское яство
+          p.food-card__promo.food-card__promo-cat Котэ не одобряет?
+          h2.food-card__title Нямушка
+          p.food-card__stuffing=key
+          .food-card__description
+            p.food-card__description-item
+              span.food-card__description-number= val[0]
+              |  порций
+            p.food-card__description-item= val[2] 
+              | в подарок
+          .food-card__weight.food-card__weight--default
+            p.food-card__weight-value= val[1]
+              br
+              span.food-card__weight-units кг
+      p.cards__text.cards__text--stuffing.js-inactive= val[3]
+      p.cards__text.cards__text-buy
+        | Чего сидишь? Пораду котэ, 
+        a.cards__text-link(href='#' tabindex='0') купи.
+      p.cards__text.cards__text--out-of-stock.js-inactive Печалька, {#val[key]} закончился.
