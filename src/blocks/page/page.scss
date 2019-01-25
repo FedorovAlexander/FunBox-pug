@@ -4,27 +4,28 @@
 // http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
 @at-root {
 
-  @-ms-viewport { // stylelint-disable-line  at-rule-no-vendor-prefix
+  @-ms-viewport {
+    // stylelint-disable-line  at-rule-no-vendor-prefix
     width: device-width;
   }
 }
 
-.page { // html
+.page {
+  // html
 
-  $block-name:                &; // #{$block-name}__element
+  $block-name: &; // #{$block-name}__element
 
   box-sizing: border-box;
-  font-size: 10px;
+  min-width: 320px;
+  min-height: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -ms-overflow-style: scrollbar;
   -ms-text-size-adjust: 100%; // stylelint-disable-line  property-no-vendor-prefix
-  min-width: 320px;
-  min-height: 100%;
 
   &__inner {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
   }
 
   &__content {
@@ -43,13 +44,9 @@
 }
 
 body {
-  background-color: #fff;
   margin: 0;
   min-height: 100%;
-  font-family: $font-family;
-  font-size: $font-size;
-  line-height: $line-height;
-  color: $text-color;
+  background-color: #fff;
 }
 
 [tabindex='-1']:focus {
@@ -88,7 +85,55 @@ svg {
   }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+.container {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+
+  max-width: 1240px;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  color: $text-color;
+
+  font-size: 16px;
+}
+
+.main-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.js-inactive {
+  display: none;
+}
+
+.js-active {
+  display: block;
 }
