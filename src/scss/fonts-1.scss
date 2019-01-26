@@ -2,11 +2,9 @@
 // Не пишите тут ничего, кроме @font-face
 
 @font-face {
-  font-family: 'Trebuchet MS';
-  font-weight: normal;
+  font-family: 'Exo 2';
+  font-weight: thin;
   font-style: normal;
-  src: url('../fonts/TrebuchetMS.woff') format('woff');
+  src: url('../fonts/exo2thin.woff2') format('woff2');
   font-display: swap;
 }
-
-
