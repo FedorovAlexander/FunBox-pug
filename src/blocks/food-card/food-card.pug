@@ -6,11 +6,11 @@ mixin food-card()
       'с рыбой': ['40', '2', '2 мыши ', 'Головы щучьи с чесноком да свежайшая сёмгушка.', 'in stock' ],
       'с курой': ['100', '5', '5 мышей ', 'Филе из цыплят с трюфелями в бульоне.', 'out of stock']
     };
-
+  
 
   each val, key in data 
-    .cards__wrapper
-      article(class=(val[4] !== 'out of stock')? 'cards__item food-card food-card--default' : 'cards__item cards__item--disabled food-card food-card--disabled' tabindex='0' role='article' aria-label='Блюдо для котика')
+     article.food-card#woof
+      .food-card__wrapper(class=(val[4] !== 'out of stock')? 'food-card__wrapper food-card__wrapper--default' : 'food-card__wrapper food-card__wrapper--disabled' tabindex='0' role='article' aria-label='Блюдо для котика')
         .food-card__content
           div(class=(val[4] !== 'out of stock')? 'food-card__disabled-layout' : 'food-card__disabled-layout food-card__disabled-layout--on')
           img.food-card__img(src='img/cat.png' alt='cat')
@@ -28,8 +28,8 @@ mixin food-card()
             p.food-card__weight-value= val[1]
               br
               span.food-card__weight-units кг
-      p(class=(val[4] !== 'out of stock') ? 'cards__text cards__text--stuffing js-inactive' : 'cards__text cards__text--stuffing js-inactive')= val[3]
-      p(class=(val[4] !== 'out of stock')? 'cards__text cards__text-buy' : 'cards__text cards__text-buy js-inactive')
+      p(class=(val[4] !== 'out of stock') ? 'food-card__text food-card__text--stuffing js-inactive' : 'food-card__text food-card__text--stuffing js-inactive')= val[3]
+      p(class=(val[4] !== 'out of stock')? 'food-card__text food-card__text-buy' : 'food-card__text food-card__text-buy js-inactive')
         | Чего сидишь? Пораду котэ, 
-        a.cards__text-link(href='#' tabindex='0') купи.
-      p(class=(val[4] !== 'out of stock') ?'cards__text cards__text--out-of-stock js-inactive' : 'cards__text cards__text--out-of-stock js-active') Печалька, #{key} закончился.
+        a.food-card__text-link(href='#' tabindex='0') купи.
+      p(class=(val[4] !== 'out of stock') ?'food-card__text food-card__text--out-of-stock js-inactive' : 'food-card__text food-card__text--out-of-stock js-active') Печалька, #{key} закончился.

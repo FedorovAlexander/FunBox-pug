@@ -3,33 +3,42 @@
 
 .food-card {
   position: relative;
-  margin: 0 auto;
-  margin-bottom: 0.9375rem;
-  width: 320px;
-  height: 480px;
-  border-radius: 10px;
-  cursor: pointer;
+  flex: 1;
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
 
-  &--default {
-    background: linear-gradient(135deg, transparent 30px, $color-default 30px);
+  &__wrapper {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 0.9375rem;
+    width: 320px;
+    height: 480px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+
+    &--default {
+      background: linear-gradient(135deg, transparent 30px, $color-default 30px);
+    }
+
+    &--selected {
+      background: linear-gradient(135deg, transparent 30px, $color-active 30px);
+    }
+
+    &--selected-hover {
+      background: linear-gradient(135deg, transparent 30px, $color-active-hover 30px);
+    }
+
+    &--disabled {
+      background: linear-gradient(135deg, transparent 30px, $color-disabled 30px);
+      cursor: not-allowed;
+    }
+
+    &--hover {
+      background: linear-gradient(135deg, transparent 30px, $color-default--hover 30px);
+    }
   }
 
-  &--selected {
-    background: linear-gradient(135deg, transparent 30px, $color-active 30px);
-  }
-
-  &--selected-hover {
-    background: linear-gradient(135deg, transparent 30px, $color-active-hover 30px);
-  }
-
-  &--disabled {
-    background: linear-gradient(135deg, transparent 30px, $color-disabled 30px);
-    cursor: not-allowed;
-  }
-
-  &--hover {
-    background: linear-gradient(135deg, transparent 30px, $color-default--hover 30px);
-  }
 
   &__content {
     box-sizing: border-box;
@@ -143,5 +152,50 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, transparent 29px, $color-card-bg 29px);
+  }
+
+  &__item--disabled {
+    background-color: #f6f6f6;
+  }
+
+  &__text {
+    margin-top: 0.75rem;
+    text-align: center;
+    text-shadow: 0 0.063rem 0 #000000;
+    letter-spacing: -0.5px;
+    color: #fff;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 0.875rem;
+  }
+
+  &__text--out-of-stock {
+    color: $color-hghlight;
+  }
+
+  &__text-link {
+    text-decoration-style: dashed;
+    color: $color-default;
+
+    &:hover {
+      color: $color-default--hover;
+    }
+
+    &:visited {
+      color: $color-default--hover;
+    }
+
+    &:active {
+      color: $color-hghlight;
+    }
+
+    &:focus {
+      color: $color-hghlight;
+    }
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .food-card {
+    margin-bottom: 40px;
   }
 }
