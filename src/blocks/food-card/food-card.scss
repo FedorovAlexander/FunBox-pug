@@ -13,9 +13,9 @@
     margin-bottom: 0.9375rem;
     width: 320px;
     height: 480px;
+    outline: none;
     border-radius: 10px;
     cursor: pointer;
-    outline: none;
 
     &--default {
       background: linear-gradient(135deg, transparent 30px, $color-default 30px);
@@ -75,6 +75,7 @@
   &__title {
     margin-top: 5px;
     margin-bottom: 3px;
+    letter-spacing: 1.3px;
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 3rem;
   }
@@ -82,6 +83,7 @@
   &__stuffing {
     margin-bottom: 1.125rem;
     line-height: 0.9;
+    letter-spacing: 1px;
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
