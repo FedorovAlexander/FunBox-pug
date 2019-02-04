@@ -9,7 +9,7 @@ mixin food-card()
   
 
   each val, key in data 
-     article.food-card#woof
+     article.food-card
       .food-card__wrapper(class=(val[4] !== 'out of stock')? 'food-card__wrapper food-card__wrapper--default' : 'food-card__wrapper food-card__wrapper--disabled' tabindex='0' role='article' aria-label='Блюдо для котика')
         .food-card__content
           div(class=(val[4] !== 'out of stock')? 'food-card__disabled-layout' : 'food-card__disabled-layout food-card__disabled-layout--on')
