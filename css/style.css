@@ -324,5 +324,12 @@ body {
             justify-content: center; }
   .food-card {
     margin-bottom: 2.5rem; } }
+    @media screen and (max-width: 1240px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .cards {
+    height: 1600px; }
+  .food-card {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
