@@ -5,6 +5,14 @@ var stuff = document.querySelectorAll('.food-card__text--stuffing');
 var buy = document.querySelectorAll('.food-card__text-buy');
 var outOfStock = document.querySelectorAll('.food-card__text--out-of-stock');
 
+/* Polyfill for forEach */
+
+if (window.NodeList && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
+/*functions*/
+
 function clickActive() {
   cards.forEach(function(card, i) {
     var weight = card.querySelector('.food-card__weight')
