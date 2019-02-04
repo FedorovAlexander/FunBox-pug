@@ -326,11 +326,7 @@ body {
     margin-bottom: 2.5rem; } }
     @media screen and (max-width: 1240px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .cards {
-    height: 1600px; }
-  .food-card {
-    margin-right: 0;
-    margin-left: 0;
-    width: 100%;
+    height: 1600px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -340,6 +336,10 @@ body {
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; } }
+            align-items: center; }
+  .food-card {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
