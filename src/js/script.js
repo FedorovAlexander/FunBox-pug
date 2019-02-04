@@ -68,3 +68,28 @@ function clickCheckAndHover() {
     }
   })
 }
+
+
+/* for IE*/
+function isIE() {
+  ua = navigator.userAgent;
+  var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+  
+  return is_ie; 
+}
+
+if (isIE()){
+    var cardsBlock = document.querySelector('.cards');
+    var foodCard = document.querySelectorAll('.food-card');
+    if (window.innerWidth < 1240) {
+      cardsBlock.style.height = '1600px';
+      foodCard.style.width = '100%';
+      foodCard.style.marginLeft = '0';
+      foodCard.style.marginRight = '0';
+  } else {
+    console.log('it is not IE')
+  }
+    
+} else {
+  console.log('it is not IE')
+}
