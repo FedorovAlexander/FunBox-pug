@@ -201,3 +201,11 @@
     margin-bottom: 2.5rem;
   }
 }
+
+@media screen and (max-width: $screen-lg ) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .food-card {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+}

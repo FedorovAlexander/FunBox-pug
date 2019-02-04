@@ -16,3 +16,10 @@
     justify-content: center;
   }
 }
+
+@media screen and (max-width: $screen-lg) and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .cards {
+    height: 1600px;
+  }
+}
